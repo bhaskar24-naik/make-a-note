@@ -42,12 +42,13 @@ useEffect(() => {
   );
 }, [notes]);
 
-const addNote = (text) => {
+const addNote = (text, color) => {
   const date = new Date();
   const newNote = {
     id: nanoid,
     text: text,
-    date: date.toLocaleDateString()
+    date: date.toLocaleDateString(),
+    color: color || '#fef68a'
   }
   const newNotes = [...notes, newNote];
   setNotes(newNotes);
